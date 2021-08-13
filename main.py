@@ -135,7 +135,7 @@ def push_wx(sckey, desp=""):
         response = requests.get(server_url, params=params)
         json_data = response.json()
  
-        if json_data['errno'] == 0:
+        if json_data['data']['errno'] == 0:
             print(f"[{now}] 推送成功。")
         else:
             print(f"[{now}] 推送失败：{json_data['errno']}({json_data['errmsg']})")
